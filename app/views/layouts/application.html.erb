@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <%= csrf_meta_tags %>
+    <script>
+      $(function() {
+        $("#menu_open").click(function() {
+          $(this).hide();
+          $("#menu_close").show();
+          $("#main_drawer").show();
+        });
+        $("#menu_close").click(function() {
+          $(this).hide();
+          $("#menu_open").show();
+          $("#main_drawer").hide();
+        });
+      });
+    </script>
   </head>
   <body>
     <nav>
-      <div class="menu_button">
-      </div>
-      <h3 class="brand_name">Swing Vote</h3>
+      <div id="menu_open" class="menu_open"></div>
+      <div id="menu_close" class="menu_close"></div>
+      <p class="brand_name">Swing Vote</p>
     </nav>
+    <div id="main_drawer" class="main_drawer"></div>
     
     <%= yield %>
     
