@@ -41,29 +41,44 @@
         }
     }
     
-    .card_container {
-        padding-top: 50px;
-    }
     
     .cards {
         width: 90%;
         height: 200px;
         border: #bdbdbd 1px solid;
         border-radius: 25px;
+        margin: auto;
         margin-bottom: 10px;
+        display: table;
     }
+    
+    .arrow_button_left {
+        float: left;
+        width: 10%;
+        height: 32px;
+        background-color: yellow;
+    }
+    
+    .arrow_button_right {
+        float: right;
+        width: 10%;
+        height: 32px;
+        background-color: yellow;
+    }
+    
     .first {
         height: 350px;
+        margin-top: 50px;
     }
     
     .main_drawer {
         height: 100%;
         width: 60%;
-        top: 40px;
         left: 0px;
-        position: absolute;
+        position: fixed;
         background-color: #bdbdbd;
         display: none;
+        margin-top: -10px;
     }
 }
 
@@ -76,7 +91,9 @@
     
 //노트북 및 PC Layout
 @media screen and (min-device-width:1025px) {
-    body{
-        background-color: lightgrey;
+    @media screen and (max-width:600px) {
+        body {
+            background-color: blue;
+        }
     }
 }
